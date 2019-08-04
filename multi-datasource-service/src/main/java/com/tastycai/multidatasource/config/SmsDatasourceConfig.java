@@ -1,7 +1,7 @@
 package com.tastycai.multidatasource.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.tastycai.multidatasource.config.properties.JswmsDatasourceProperty;
+import com.tastycai.multidatasource.config.properties.SmsDatasourceProperty;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 public class SmsDatasourceConfig {
 
     @Autowired
-    private JswmsDatasourceProperty datasourceProperty;
+    private SmsDatasourceProperty datasourceProperty;
 
     public static final String PACKAGE = "com.tastycai.multidatasource.sms.dao";
 
