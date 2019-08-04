@@ -4,7 +4,6 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.tastycai.multidatasource.config.properties.WmsDatasourceProperty;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +14,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(sqlSessionFactoryRef = "wmsSqlsessionFactory",basePackages = WmsDatasourceConfig.PACKAGE)
 public class WmsDatasourceConfig {
 
     @Autowired

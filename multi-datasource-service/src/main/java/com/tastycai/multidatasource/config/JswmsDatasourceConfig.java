@@ -4,7 +4,6 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.tastycai.multidatasource.config.properties.JswmsDatasourceProperty;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -15,19 +14,18 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(sqlSessionFactoryRef = "jswmsSqlsessionFactory",basePackages = JswmsDatasourceConfig.PACKAGE)
 public class JswmsDatasourceConfig {
 
     @Autowired
     private JswmsDatasourceProperty datasourceProperty;
 
-    public static final String PACKAGE = "com.tastycai.multidatasource.jswms.dao";
+    public static final String PACKAGE = "com.tastycai.multidatasource.*.dao";
 
-    private static String MAPPER_LOCATION = "classpath:com/tastycai/multidatasource/jswms/dao/*.xml";;
+    private static String MAPPER_LOCATION = "classpath:com/tastycai/multidatasource/*/dao/*.xml";
 
     // 数据源
     @Bean("jswmsDatasource")
-    public DataSource dataSource() throws Exception{
+    public DataSource dataSource() throws Exception {
 
         DruidDataSource druid = new DruidDataSource();
         // 监控统计拦截的filters
@@ -68,7 +66,7 @@ public class JswmsDatasourceConfig {
 
     // jdbcTemplate
     @Bean("jswmsJdbcTemplate")
-    JdbcTemplate jdbcTemplate(@Qualifier("jswmsDatasource") DataSource dataSource){
+    JdbcTemplate jdbcTemplate(@Qualifier("jswmsDatasource") DataSource dataSource) {
 
         return new JdbcTemplate(dataSource);
     }
