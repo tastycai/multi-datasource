@@ -2,9 +2,10 @@ package com.tastycai.multidatasource.config.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 @ConfigurationProperties(prefix = "datasource.wms")
-@EnableConfigurationProperties(WmsDatasourceProperty.class)
+@Component
 public class WmsDatasourceProperty {
 
     public static String filter;

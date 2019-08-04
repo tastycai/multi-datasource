@@ -1,4 +1,6 @@
 package com.tastycai.multidatasource.sms.service;
 
-public class ProductService {
+public interface ProductService {
+
+    public void saveProduct();
 }

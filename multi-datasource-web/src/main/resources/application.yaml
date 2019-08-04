@@ -4,7 +4,7 @@ datasource:
     filters: stat
     driverClassName: com.mysql.jdbc.Driver
     #配置基本属性
-    url: jdbc:mysql://192.168.0.127:3306/order1?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&autoReconnect=true&useSSL=false
+    url: jdbc:mysql://192.168.0.127:3306/jswms?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&autoReconnect=true&useSSL=false
     username: root
     password: aa123456
     #配置初始化大小/最小/最大

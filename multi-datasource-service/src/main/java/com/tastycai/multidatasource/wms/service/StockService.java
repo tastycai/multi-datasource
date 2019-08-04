@@ -1,4 +1,6 @@
 package com.tastycai.multidatasource.wms.service;
 
-public class StockService {
+public interface StockService {
+
+    public void saveStock();
 }
